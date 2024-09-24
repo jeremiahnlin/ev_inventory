@@ -1,0 +1,5 @@
+Database: defaultdb
+Host: mysql-2332b00d-inventory-system.k.aivencloud.com
+Port: 28334
+Username: avnadmin
+Password: AVNS_VN-gN724glxc0oBiNgJ
