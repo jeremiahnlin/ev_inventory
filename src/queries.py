@@ -4,6 +4,17 @@ def pull_data(table):
 def pull_data(table):
     return f"SELECT * FROM {table};"
 
+# Pull data examples --> user permissions
+#ALLOWED_TABLES = {'users', 'products', 'orders'}  # Example allowed tables
+
+# def pull_data(connection, table):
+#     if table not in ALLOWED_TABLES:
+#         raise ValueError("Invalid table name")
+#     query = f"SELECT * FROM {table};"
+#     with connection.cursor() as cursor:
+#         cursor.execute(query)
+#         return cursor.fetchall()
+
 def pull_data_with_column_values(table, column, value):
     return f"SELECT * FROM {table} WHERE {column} = '{value}';"
 
