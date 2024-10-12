@@ -1,3 +1,5 @@
+import pandas as pd
+
 def pull_data(table):
     return """SELECT * FROM """ + str(table)
 
@@ -29,3 +31,11 @@ def create_table(table_name, columns):
 def delete_table(table_name):
     return f"DROP TABLE IF EXISTS {table_name};"
 
+def generate_insert_queries(csv_file_path, table_name):
+    df = pd.read_csv(csv_file_path)
+    queries = []
+    for _, row in df.iterrows():
+        values = ', '.join(f"'{str(value)}'" if isinstance(value, str) else str(value) for value in row)
+        query = f"INSERT INTO {table_name} VALUES ({values});"
+        queries.append(query)
+    return '\n'.join(queries)
