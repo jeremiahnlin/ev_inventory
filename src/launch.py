@@ -71,5 +71,7 @@ def run_app(env_name, app_script):
 
 # Post-setup: Activate virtualenv and run app.py
 print("Starting the virtual environment and running the application...")
+script_dir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(script_dir)
 create_virtualenv(env_name)
 run_app(env_name, app_script)
